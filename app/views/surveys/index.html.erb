@@ -1,0 +1,31 @@
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Question Numbers');
+        data.addColumn('number', 'Response Average');
+        data.addRows([
+          ['one', <%=@means[0]%>],
+          ['two', <%=@means[1]%>],
+          ['three', <%=@means[2]%>],
+          ['four', <%=@means[3]%>],
+          ['five', <%=@means[4]%>] 
+        ]); 
+
+        var options = {
+          title: 'Survey Results',
+          hAxis: {title: 'Question Numbers', titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!-- app/views/questions/survey.html.erb -->
+<form action="updateResults" method="post">
+  <% sid = 0 %>
+  <% @questions.each do |q| %>
+  <%=q.qid%>. <%=q.q_text%><br />
+    <input type="radio" name="<%= q.qid %>" value="1"> - Very bad<br />
+    <input type="radio" name="<%= q.qid %>" value="2"> - Bad<br />
+    <input type="radio" name="<%= q.qid %>" value="3"> - Okay<br />
+    <input type="radio" name="<%= q.qid %>" value="4"> - Good<br />
+    <input type="radio" name="<%= q.qid %>" value="5"> - Very good<br />
+    <% sid = q.sid %>
+  <% end %>
+  <input type="hidden" name="survey_id" value="<%= sid %>" />
+  <input type="submit" value="Submit"/>
+</form>

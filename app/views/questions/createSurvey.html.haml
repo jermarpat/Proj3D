@@ -1,0 +1,27 @@
+%form{:method => "post", :action => "handleCreateSurvey"}
+  Survey Name:
+  %input{:type => "text", :name => "s_name"}
+  %br
+  %br
+  %input{:type => "hidden", :name => "dept", :value => cookies.signed[:dept]}
+  %input{:type => "hidden", :name => "division", :value => cookies.signed[:division]}
+  
+  Question 1
+  %input{:type => "text", :name => "q_1"}
+  %br
+  Question 2
+  %input{:type => "text", :name => "q_2"}
+  %br
+  Question 3
+  %input{:type => "text", :name => "q_3"}
+  %br
+  Question 4
+  %input{:type => "text", :name => "q_4"}
+  %br
+  Question 5
+  %input{:type => "text", :name => "q_5"}
+  %br
+  %br
+  %input{:type => "submit", :value => "Submit"}
+
+ 
